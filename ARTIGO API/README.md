@@ -89,18 +89,6 @@ app.listen(3000, () => {
   console.log("Servidor rodando em http://localhost:3000");
 });
 ```
-
-3. Execute a API:
-
-```bash
-node index.js
-```
-
-4. Teste no navegador ou no **Postman/Insomnia**:
-
-* `GET http://localhost:3000/`
-* `POST http://localhost:3000/usuarios` com `{ "nome": "Ana" }`
-
 ---
 
 ## ✅ Conclusão
