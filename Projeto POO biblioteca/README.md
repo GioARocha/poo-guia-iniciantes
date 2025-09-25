@@ -1,9 +1,7 @@
 
----
-
 # 📚 Sistema de Gestão de Biblioteca
 
-Projeto simples em **Python** utilizando **Programação Orientada a Objetos (POO)** para gerenciar uma biblioteca.
+---
 
 ## 🚀 Funcionalidades
 
@@ -12,9 +10,6 @@ Projeto simples em **Python** utilizando **Programação Orientada a Objetos (PO
 * Emprestar livros
 * Devolver livros
 
-## 🛠 Tecnologias utilizadas
-
-* Python 3
 
 ## 📂 Estrutura do Código
 
@@ -79,7 +74,7 @@ biblio.listar_livros()
 ## ▶️ Como executar
 
 1. Tenha o **Python 3** instalado na sua máquina
-2. Clone este repositório:
+2. Copie este repositório:
 
    ```bash
    git clone https://github.com/SEU_USUARIO/sistema-biblioteca.git
