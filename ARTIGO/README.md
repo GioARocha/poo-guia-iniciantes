@@ -1,74 +1,106 @@
-# poo-guia-iniciantes
+# Artigo: Programação Orientada a Objetos (POO)
 
-📘 Introdução à Programação Orientada a Objetos (POO) em Python
+## 📌 Introdução
+A **Programação Orientada a Objetos (POO)** é um paradigma de programação que organiza o software em **objetos**, cada um contendo **dados** (atributos) e **comportamentos** (métodos).  
+Diferente da programação procedural, que segue uma sequência de comandos, a POO busca **modularidade, reutilização e abstração**, facilitando a manutenção e expansão de sistemas.
 
-A Programação Orientada a Objetos (POO) organiza o código em torno de objetos, que possuem atributos (características) e métodos (comportamentos).
-Vamos entender os três conceitos básicos: classes, atributos e métodos, com exemplos em Python.
+---
 
-🏗️ 1. Classes: O Molde do Objeto
+## 🧩 Conceitos Fundamentais
 
-Uma classe é como a planta de uma casa. Ela define a estrutura que os objetos terão, mas ainda não é um objeto em si.
+### 1. Classes e Objetos
+- **Classe**: molde ou estrutura que define atributos e métodos de um objeto.
+- **Objeto**: instância de uma classe, representando algo real no código.
 
-Exemplo em Python:
-
+**Exemplo em Python:**
+```python
 class Carro:
-    # Estrutura inicial da classe Carro
-    pass
-
-📝 2. Atributos: As Características
-
-Os atributos são as informações que descrevem o objeto.
-Por exemplo, um carro tem marca, modelo e cor.
-
-class Carro:
-    def __init__(self, marca, modelo, cor):
+    def __init__(self, marca, modelo):
         self.marca = marca
         self.modelo = modelo
-        self.cor = cor
 
-
-Agora podemos criar um objeto a partir da classe e acessar seus atributos:
-
-meu_carro = Carro("Toyota", "Corolla", "preto")
-
+meu_carro = Carro("Toyota", "Corolla")
 print(meu_carro.marca)  # Saída: Toyota
-print(meu_carro.cor)    # Saída: preto
+````
 
-⚙️ 3. Métodos: Os Comportamentos
+---
 
-Os métodos são as ações que o objeto pode realizar.
-No caso do carro, ele pode acelerar e frear.
+### 2. Atributos e Métodos
 
-class Carro:
-    def __init__(self, marca, modelo, cor):
-        self.marca = marca
-        self.modelo = modelo
-        self.cor = cor
-        self.velocidade = 0
+* **Atributos**: variáveis que armazenam dados do objeto.
+* **Métodos**: funções que definem comportamentos do objeto.
 
-    def acelerar(self):
-        self.velocidade += 10
-        print(f"O {self.modelo} acelerou. Velocidade atual: {self.velocidade} km/h")
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
 
-    def frear(self):
-        self.velocidade -= 5
-        if self.velocidade < 0:
-            self.velocidade = 0
-        print(f"O {self.modelo} freou. Velocidade atual: {self.velocidade} km/h")
+    def cumprimentar(self):
+        print(f"Olá, meu nome é {self.nome} e tenho {self.idade} anos.")
+
+pessoa1 = Pessoa("Ana", 25)
+pessoa1.cumprimentar()
+```
+
+---
+
+### 3. Encapsulamento
+
+Restringe o acesso direto aos atributos, permitindo controle através de métodos **getters** e **setters**.
+
+```python
+class ContaBancaria:
+    def __init__(self, saldo):
+        self.__saldo = saldo  # atributo privado
+
+    def depositar(self, valor):
+        self.__saldo += valor
+
+    def obter_saldo(self):
+        return self.__saldo
+
+conta = ContaBancaria(1000)
+conta.depositar(500)
+print(conta.obter_saldo())  # Saída: 1500
+```
+
+---
+
+### 4. Herança
+
+Permite que uma classe **filha** herde atributos e métodos de uma **classe pai**, promovendo reutilização de código.
+
+```python
+class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def emitir_som(self):
+        pass
+
+class Cachorro(Animal):
+    def emitir_som(self):
+        print("Au au!")
+
+dog = Cachorro("Rex")
+dog.emitir_som()  # Saída: Au au!
+```
+---
+
+## 🛠 Boas Práticas em POO
+
+* Utilizar encapsulamento sempre que possível.
+* Evitar classes muito grandes.
+* Documentar métodos e classes com docstrings.
+* Reaproveitar código com herança e composição.
+
+---
+
+## 🚀 Conclusão
+
+A POO é essencial para criar sistemas **modulares, legíveis e fáceis de manter**. Compreender conceitos como **classe, objeto, encapsulamento, herança, polimorfismo e abstração** permite desenvolver aplicações mais robustas e escaláveis.
+
+---
 
 
-Testando os métodos:
-
-meu_carro = Carro("Toyota", "Corolla", "preto")
-
-meu_carro.acelerar()  # O Corolla acelerou. Velocidade atual: 10 km/h
-meu_carro.acelerar()  # O Corolla acelerou. Velocidade atual: 20 km/h
-meu_carro.frear()     # O Corolla freou. Velocidade atual: 15 km/h
-
-✅ Resumo
-
-Classe → o projeto (define atributos e métodos).
-
-Atributos → características do objeto.
-
-Métodos → comportamentos do objeto.
