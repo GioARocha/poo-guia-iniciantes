@@ -1,7 +1,5 @@
 # 🎬 API de Frases de Séries
 
-Uma API simples construída com **Node.js + Express**, que retorna frases icônicas de séries como **The Walking Dead**, **Game of Thrones** e outras.
-
 ---
 
 ## 🚀 Funcionalidades
@@ -17,35 +15,6 @@ Uma API simples construída com **Node.js + Express**, que retorna frases icôni
 
 * [Node.js](https://nodejs.org/)
 * [Express](https://expressjs.com/)
-
----
-
-## ⚙️ Como Rodar o Projeto
-
-1. Clone este repositório:
-
-```bash
-git clone https://github.com/seu-usuario/api-frases-series.git
-cd api-frases-series
-```
-
-2. Instale as dependências:
-
-```bash
-npm install
-```
-
-3. Rode a API:
-
-```bash
-node index.js
-```
-
-4. Acesse no navegador ou Insomnia/Postman:
-
-* `http://localhost:3000/`
-* `http://localhost:3000/frases`
-* `http://localhost:3000/random`
 
 ---
 
@@ -111,15 +80,3 @@ app.listen(PORT, () => {
 { "id": 3, "serie": "Breaking Bad", "frase": "I am the one who knocks!" }
 ```
 
----
-
-## 📝 Possíveis Melhorias
-
-* Adicionar mais frases de séries.
-* Criar rota `POST` para cadastrar frases.
-* Conectar a um banco de dados (MongoDB, SQLite, etc).
-* Deploy no **Render**, **Vercel** ou **Railway**.
-
----
-
-Quer que eu já monte a **estrutura de pastas do projeto** (com `package.json`, `index.js`, e talvez uma pasta `routes`) para você só colar e rodar?
